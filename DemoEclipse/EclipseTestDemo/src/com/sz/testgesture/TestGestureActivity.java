@@ -9,13 +9,18 @@ import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-public class TestGestureActivity extends Activity{
+public class TestGestureActivity extends Activity {
 	
 	private String TAG = "sz";
     private Button btn_textgesture;
     private GestureDetector mGestureDetector;
+	private OnTouchListener onTouchListen;
+	private LinearLayout fl_test_gesture;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +30,27 @@ public class TestGestureActivity extends Activity{
 		
 		mGestureDetector = new GestureDetector(this, new MyOnGestureListener());
 
+		onTouchListen = new View.OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				Log.i(TAG, "onTouch-----" + getActionName(event.getAction()));
+				mGestureDetector.onTouchEvent(event);
+				// 一定要返回true，不然获取不到完整的事件
+				return true;
+			}
+		};
+		
 		btn_textgesture = (Button) findViewById(R.id.btn_textgesture);
-		btn_textgesture.setOnTouchListener(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Log.i(TAG, "onTouch-----" + getActionName(event.getAction()));
-                mGestureDetector.onTouchEvent(event);
-                // 一定要返回true，不然获取不到完整的事件
-                return true;
-            }
-        });
+		fl_test_gesture = (LinearLayout) findViewById(R.id.fl_test_gesture);
+		
+		btn_textgesture.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				System.out.println( " btn_textgesture 被点击了!  " );
+			}
+		});
+		fl_test_gesture.setOnTouchListener(onTouchListen);
     }
 
     private String getActionName(int action) {
