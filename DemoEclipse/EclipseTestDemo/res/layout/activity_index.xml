@@ -1,0 +1,33 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66666666" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_test_gesture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试Gestrue"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btn_test_animate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试动画"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btn_test_scrollview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试scrollview"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</ScrollView>

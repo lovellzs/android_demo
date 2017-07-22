@@ -1,0 +1,111 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66666666"
+    android:orientation="horizontal"
+    tools:context=".AnimateActivity" >
+
+    <com.sz.testscrooll.ObservableScrollView
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="100dp"
+        android:background="#fff"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会
+                习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈
+                习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈
+                习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈
+                谈习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈习近平同巴勒斯坦国总统举行会谈" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="试试6" />
+
+            <TextView
+                android:id="@+id/txt_long_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="试试6" />
+
+            <EditText
+                android:id="@+id/txt_long_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="试试6" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="试试6" />
+
+            <TextView
+                android:id="@+id/txt_long_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="试试6" />
+        </LinearLayout>
+    </com.sz.testscrooll.ObservableScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_get_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取高度" />
+
+        <Button
+            android:id="@+id/btn_get_content_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取内容高度" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/totop"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#666666"
+            android:gravity="center"
+            android:text="滑到顶端"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/tobottom"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="#666666"
+            android:gravity="center"
+            android:text="滑到底端"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+</FrameLayout>
