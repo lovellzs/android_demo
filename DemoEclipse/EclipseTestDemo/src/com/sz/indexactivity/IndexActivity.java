@@ -10,12 +10,14 @@ import android.widget.Button;
 import com.example.testanimate.AnimateActivity;
 import com.sz.main.test.R;
 import com.sz.testgesture.TestGestureActivity;
+import com.sz.testlayout.TestFrameBgActivity;
 import com.sz.testscrooll.TestScrollActivity;
 
 public class IndexActivity extends Activity implements OnClickListener{
 	private Button btn_test_gesture;
 	private Button btn_test_animate;
 	private Button btn_test_scrollview;
+	private Button btn_test_framelayout_bg;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +29,15 @@ public class IndexActivity extends Activity implements OnClickListener{
 	private void findId() {
 		btn_test_gesture = (Button)findViewById(R.id.btn_test_gesture); 
 		btn_test_gesture.setOnClickListener(this);
+		
 		btn_test_animate = (Button)findViewById(R.id.btn_test_animate); 
 		btn_test_animate.setOnClickListener(this);
+		
 		btn_test_scrollview = (Button)findViewById(R.id.btn_test_scrollview); 
 		btn_test_scrollview.setOnClickListener(this);
+		
+		btn_test_framelayout_bg = (Button)findViewById(R.id.btn_test_framelayout_bg); 
+		btn_test_framelayout_bg.setOnClickListener(this);
 	}
 
 	@Override
@@ -42,6 +49,8 @@ public class IndexActivity extends Activity implements OnClickListener{
 			toActivity( AnimateActivity.class );
 		}else if( id == R.id.btn_test_scrollview ){
 			toActivity( TestScrollActivity.class );
+		}else if( id == R.id.btn_test_framelayout_bg){
+			toActivity( TestFrameBgActivity.class );
 		}
 	}
 	

@@ -28,6 +28,12 @@
             android:layout_height="wrap_content"
             android:text="测试scrollview"
             android:textSize="13sp" />
+        <Button
+            android:id="@+id/btn_test_framelayout_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试FrameLayout背景"
+            android:textSize="13sp" />
     </LinearLayout>
 
 </ScrollView>
