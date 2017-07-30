@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pay_try_again">确定</string>
+    <string name="text_cancle">取消</string>
+    <string name="app_name">测试Gallery</string>
+</resources>

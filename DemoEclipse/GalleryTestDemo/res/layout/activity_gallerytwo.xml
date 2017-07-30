@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sz="http://schemas.android.com/apk/res/com.sz.gallery"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.sz.gallerytwo.AnimatedSizingGallery
+        android:id="@+id/gallery0"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="2"
+        sz:animationDuration="400"
+        sz:animationOffsetY="-0.5"
+        sz:animationScale="2.5" />
+
+    <com.sz.gallerytwo.AnimatedSizingGallery
+        android:id="@+id/gallery1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+</LinearLayout>
