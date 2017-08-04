@@ -61,7 +61,7 @@ public class XGallery extends FrameLayout implements View.OnTouchListener {
         mViewPager.setClipChildren(false);
         mViewPager.setOverScrollMode(OVER_SCROLL_NEVER);
         mViewPager.setHorizontalScrollBarEnabled(false);
-        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.setOffscreenPageLimit(5);//5
         setPageTransformer(new BottomScalePageTransformer());
 
         LayoutParams params = new LayoutParams(itemWidth, itemHeight);

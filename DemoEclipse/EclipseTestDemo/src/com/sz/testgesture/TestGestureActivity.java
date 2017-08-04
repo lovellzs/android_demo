@@ -1,7 +1,5 @@
 package com.sz.testgesture;
 
-import com.sz.main.test.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,8 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
+import com.sz.main.test.R;
 
 public class TestGestureActivity extends Activity {
 	

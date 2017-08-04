@@ -11,6 +11,8 @@ import com.example.testanimate.AnimateActivity;
 import com.sz.main.test.R;
 import com.sz.testgesture.TestGestureActivity;
 import com.sz.testlayout.TestFrameBgActivity;
+import com.sz.testlayout.TestRippleActivity;
+import com.sz.testnewgallery.TestNewGalleryActivity;
 import com.sz.testscrooll.TestScrollActivity;
 
 public class IndexActivity extends Activity implements OnClickListener{
@@ -18,6 +20,8 @@ public class IndexActivity extends Activity implements OnClickListener{
 	private Button btn_test_animate;
 	private Button btn_test_scrollview;
 	private Button btn_test_framelayout_bg;
+	private Button btn_test_newgallery;
+	private Button btn_test_testripple;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,12 @@ public class IndexActivity extends Activity implements OnClickListener{
 		
 		btn_test_framelayout_bg = (Button)findViewById(R.id.btn_test_framelayout_bg); 
 		btn_test_framelayout_bg.setOnClickListener(this);
+		
+		btn_test_newgallery = (Button)findViewById(R.id.btn_test_newgallery); 
+		btn_test_newgallery.setOnClickListener(this);
+		
+		btn_test_testripple = (Button)findViewById(R.id.btn_test_testripple); 
+		btn_test_testripple.setOnClickListener(this);
 	}
 
 	@Override
@@ -51,6 +61,10 @@ public class IndexActivity extends Activity implements OnClickListener{
 			toActivity( TestScrollActivity.class );
 		}else if( id == R.id.btn_test_framelayout_bg){
 			toActivity( TestFrameBgActivity.class );
+		}else if( id == R.id.btn_test_newgallery){
+			toActivity( TestNewGalleryActivity.class );
+		}else if( id == R.id.btn_test_testripple){
+			toActivity( TestRippleActivity.class );
 		}
 	}
 	

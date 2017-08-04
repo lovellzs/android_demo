@@ -1,1 +1,19 @@
-include ':app', ':library',':xgallery', ':samples'
+include ':app',
+        ':library',
+
+        ':xgallery',
+        ':samples'
+
+include ':cardslideview'
+project(":cardslideview").projectDir = new File("./crazysunj/cardslideview")
+
+include ":hongyangapp"
+project(":hongyangapp").projectDir = new File("./crazysunj/hongyangapp")
+
+//测试安卓5.0新特性
+include ':test_lollipop_ripple'
+project(":test_lollipop_ripple").projectDir = new File("./test_android_5.0/test_lollipop_ripple")
+
+
+include ':test_activity_viewanimation'
+project(":test_activity_viewanimation").projectDir = new File("./test_android_5.0/test_activity_viewanimation")

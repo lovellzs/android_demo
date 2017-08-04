@@ -7,11 +7,11 @@
 
     <com.xgallery.android.XGallery
         android:id="@+id/xgallery"
-        android:layout_width="200dp"
-        android:layout_height="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#e0e0e0"
-        
-        app:xGallery_itemHeight="100dp"
-        app:xGallery_itemWidth="80dp" />
+
+        app:xGallery_itemHeight="150dp"
+        app:xGallery_itemWidth="150dp" />
 
 </LinearLayout>

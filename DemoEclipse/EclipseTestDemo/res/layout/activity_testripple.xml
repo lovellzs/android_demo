@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_test_gesture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66666666"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="系统无界效果" />
+
+    <TextView
+        android:layout_margin="100dp"
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="系统有界效果" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/white_ripple"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="自定义有界效果" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_ripple"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="自定义圆角有界效果"
+        android:textColor="@color/white" />
+
+</LinearLayout>

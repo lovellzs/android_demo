@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +20,12 @@
         <activity android:name="com.sz.testscrooll.TestScrollActivity" >
         </activity>
         <activity android:name="com.sz.testgesture.TestGestureActivity" >
+        </activity>
+        <activity android:name="com.sz.testlayout.TestFrameBgActivity" >
+        </activity>
+        <activity android:name="com.sz.testlayout.TestRippleActivity" >
+        </activity>
+        <activity android:name="com.sz.testnewgallery.TestNewGalleryActivity" >
         </activity>
         <activity android:name="com.sz.indexactivity.IndexActivity" >
             <intent-filter>

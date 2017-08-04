@@ -1,0 +1,6 @@
+<resources>
+       <!-- btn light blue -->
+   <color name="btn_lightBlue_text_color">#FFFFFFFF</color>
+   <!-- btn red -->
+   <color name="btn_red_text_color">#FFFFFFFF</color>
+</resources>
