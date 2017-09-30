@@ -27,19 +27,19 @@ public class MyCardHandler implements CardHandler<Integer> {
 	
     @Override
     public View onBind(final Context context, final Integer data, final int position) {
-//        View view = View.inflate(ctx, R.layout.item, null);
-//        ImageView imageView = (ImageView) view.findViewById(R.id.image);
-////        Glide.with(context).load(data).into(imageView);
-//        
-//        imageView.setImageResource(data);
-//        view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(ctx, "data:" + urls[position] + "position:" + position, Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        View view = View.inflate(ctx, R.layout.item, null);
+        ImageView imageView = (ImageView) view.findViewById(R.id.image);
+//        Glide.with(context).load(data).into(imageView);
+        
+        imageView.setImageResource(data);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ctx, "data:" + urls[position] + "position:" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
     	
-    	TextView view = new TextView(context);
+//    	TextView view = new TextView(context);
         return view;
     }
 }
