@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/txt_getrequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get请求"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/txt_postrequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post请求"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请求的数据" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/txt_showresponse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

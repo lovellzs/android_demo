@@ -1,1 +1,2 @@
-include ':testone'
+include ':testone', ':testokhttp',
+        ':testormlite'
