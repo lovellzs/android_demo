@@ -134,10 +134,10 @@ public class HttpCaller {
             @Override
             public void onFailure(int status, byte[] data) {
                 clear(key);
-
+                String str = "";
                 if (MLog.isDebug) {
                     try {
-                        String str = new String(data, "utf-8");
+                        str = new String(data, "utf-8");
                         MLog.i(TAG, url + " " + status + " " + str);
 
                     } catch (Exception e) {
@@ -145,6 +145,10 @@ public class HttpCaller {
                     }
                 }
 
+                //处理OKHttp 取消请求后 抛出异常
+                if("Canceled".equalsIgnoreCase(str)){
+                    return ;
+                }
                 sendCallback(callback);//处理callback
             }
 
@@ -165,6 +169,8 @@ public class HttpCaller {
                         e.printStackTrace();
                         MLog.e(TAG, "自动解析错误:" + e.toString());   // js中的数字，boolean 转成java中的字符串都不会报错
                     }
+
+                    sendCallback(callback);//处理callback
                 }
             }
         };

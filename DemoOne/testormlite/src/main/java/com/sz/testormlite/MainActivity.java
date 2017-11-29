@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.sz.testormlite.bean.User;
 import com.sz.testormlite.dao.DaoManager;
-import com.sz.testormlite.dao.DatabaseHelper;
 
 import java.sql.SQLException;
 import java.util.List;

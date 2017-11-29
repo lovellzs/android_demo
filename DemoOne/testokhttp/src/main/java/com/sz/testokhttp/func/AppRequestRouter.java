@@ -1,5 +1,6 @@
 package com.sz.testokhttp.func;
 
+import com.sz.testokhttp.bean.Notify;
 import com.sz.testokhttp.bean.User;
 import com.sz.testokhttp.net.Header;
 import com.sz.testokhttp.net.HttpCaller;
@@ -29,5 +30,12 @@ public class AppRequestRouter {
         Header[] header = new Header[]{};
 
         HttpCaller.getInstance().get(User.class,"getuser",url,header, callback);
+    }
+
+    public void getNofify(RequestDataCallback<Notify> callback){
+        String url = "http://192.168.39.124:3000/notify";
+        Header[] header = new Header[]{};
+
+        HttpCaller.getInstance().get(Notify.class,"getuser",url,header, callback);
     }
 }

@@ -1,5 +1,7 @@
 package com.sz.testokhttp.func;
 
+import com.sz.testokhttp.bean.User;
+
 /**
  * Created by apple on 2017/11/28.
  */
