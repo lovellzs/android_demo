@@ -26,4 +26,5 @@ public class MyApplication extends Application {
         DaoManager.Instance().onDestroy();
         super.onTerminate();
     }
+
 }
