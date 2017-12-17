@@ -48,6 +48,13 @@ public class TestPullRefreshListViewActivity extends Activity {
 
         myAdapter = new MyPullRefreshAdapter(this , getData(), prlList.getListView());
         prlList.setAdapter(myAdapter);
+        prlList.post(new Runnable() {
+            @Override
+            public void run() {
+                prlList.setSelection(myAdapter.getCount() - 1);//创建listview  初始最后一条数据
+            }
+        });
+
         prlList.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
 
             @Override
@@ -62,7 +69,7 @@ public class TestPullRefreshListViewActivity extends Activity {
                         handler.sendMessage(msg);
                     }
                 });
-                myAdapter.setDirection(MyPullRefreshAdapter.TO_UP);
+                myAdapter.setDirection(MyPullRefreshAdapter.TO_DOWN);
                 myAdapter.addData();
             }
 
@@ -78,7 +85,7 @@ public class TestPullRefreshListViewActivity extends Activity {
                         handler.sendMessage(msg);
                     }
                 });
-                myAdapter.setDirection(MyPullRefreshAdapter.TO_DOWN);
+                myAdapter.setDirection(MyPullRefreshAdapter.TO_UP );
                 myAdapter.addData();
             }
 

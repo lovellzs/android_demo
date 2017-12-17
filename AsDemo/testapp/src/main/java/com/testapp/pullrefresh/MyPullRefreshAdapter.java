@@ -66,8 +66,8 @@ public class MyPullRefreshAdapter extends BaseAdapter {
 
     @Override
     public void notifyDataSetChanged() {
-        this.firstPosition=mlistview.getFirstVisiblePosition();
-        this.firstY = getFirstVisibleTop(mlistview);
+//        this.firstPosition=mlistview.getFirstVisiblePosition();
+//        this.firstY = getFirstVisibleTop(mlistview);
 
         super.notifyDataSetChanged();
 
@@ -81,6 +81,9 @@ public class MyPullRefreshAdapter extends BaseAdapter {
 
     public void addData(){
 
+        this.firstPosition=mlistview.getFirstVisiblePosition();
+        this.firstY = getFirstVisibleTop(mlistview);
+
         if( direction == TO_UP){
             for(int i = 0; i < 30 ; i++ ){
                 datalist.add( " 我是帅哥 === "  + datalist.size() );
@@ -90,9 +93,13 @@ public class MyPullRefreshAdapter extends BaseAdapter {
                 callback.databack();
             }
         }else{
-            for(int i = 0; i < 30 ; i++ ){
+            for(int i = 0; i < 30 ;  i++ ){
                 datalist.add( 0," 我是帅哥 === "  + datalist.size() );
+                ++firstPosition;
             }
+
+            ++firstPosition;//不加这行代码下拉刷新时，初始时会上移一个条目
+
             if(callback !=null){
                 callback.databack();
             }
