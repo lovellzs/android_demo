@@ -1,0 +1,10 @@
+
+
+include ":TMG_android_audio_demo_1"
+project(":TMG_android_audio_demo_1").projectDir = new File("./TMG_android_audio_demo_1")
+
+
+include ":GvoiceAndroidDemo_1_1_8"
+project(":GvoiceAndroidDemo_1_1_8").projectDir = new File("./GvoiceAndroidDemo_1_1_8")
+
+

@@ -14,9 +14,9 @@ public class MyApplication extends Application {
 
     @Override
     public void onCreate() {
+        MultiDex.install(this);
         super.onCreate();
         DaoManager.Instance().init(this);
-        MultiDex.install(this);
     }
 
     @Override

@@ -1,0 +1,34 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+*bin/
+*gen/
+#*/assets/
+/libs/easemobchat_2.0.0.jar
+/libs/MiPush_SDK_Client_2_2_21.jar
+
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+*.classpath
+#*.project
+*.settings
+
+#gradle file
+*build/
+build.gradle
+.gradle
+.idea/
+*.iml
+
+#*.properties

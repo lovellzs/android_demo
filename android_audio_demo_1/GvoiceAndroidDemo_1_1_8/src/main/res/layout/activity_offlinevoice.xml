@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.tencent.apollovoice.apollovoice_demo.RealTimeVoiceActivity"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:text="ApplyMessageKey"
+        android:id="@+id/btn_ApplyMsgKey"
+        android:layout_gravity="center" />
+    <Button
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:text="Set To Stt Mode"
+        android:id="@+id/btn_SetSttMode"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Record"
+            android:id="@+id/btn_StartRec"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Record"
+            android:id="@+id/btn_StopRecord" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Voice"
+            android:id="@+id/btn_UploadVoice"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download Voice"
+            android:id="@+id/btn_DownLoadVoice" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play Voice"
+            android:id="@+id/btn_PlayVoice"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Play"
+            android:id="@+id/btn_StopPlay" />
+    </LinearLayout>
+    <Button
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:text="SpeechToText"
+        android:id="@+id/btn_STT"
+        android:layout_gravity="center" />
+    <Button
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:text="Test Api"
+        android:id="@+id/btn_testinterface"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tv_offline_log"
+        android:layout_gravity="center"
+        android:layout_weight="0.27" />
+
+</LinearLayout>

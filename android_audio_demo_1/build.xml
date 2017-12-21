@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	文件名： build.xml
+	更新日期： 2013/10/12
+	作者：yunshandi
+	描述：
+		本模板适用于通用型项目的构建，不适合包含Android library project的工程。
+		此外，本模板同样兼容Linux和Windows系统的构建。
+-->
+
+<project name="DailyBuild" default="buildAll" basedir=".">
+	<!-- 调用common_build.xml中的target，按顺序组织，执行构建 -->
+	<target name="buildAll">
+		<echo>End clearAndZipDemo</echo>
+
+	</target>
+</project>

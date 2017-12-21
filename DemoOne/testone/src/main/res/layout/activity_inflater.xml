@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/add_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加布局" />
+
+    <Button
+        android:id="@+id/inflate_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="填充Section" />
+    <Button
+        android:id="@+id/remove_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="移除第一个元素" />
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <com.app.testinflater.FirstSection
+        android:id="@+id/vg_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.app.testinflater.FirstSection>
+</LinearLayout>
