@@ -1,0 +1,51 @@
+##################################################
+# define
+
+MEDIASDK_PATH := ../depends/$(MEDIA_VERSION)-android
+MEDIASDK_INCLUDE_PATH := ../depends/$(MEDIA_VERSION)-windows/libs/agoraAudioSDK/include
+
+LOCAL_PATH:= $(call my-dir)
+
+##################################################
+# libuv
+
+include jni/libuv.mk
+
+
+##################################################
+# libagorasdk2
+
+include $(CLEAR_VARS)
+
+LOCAL_CFLAGS += -std=c++11 -g -O0
+LOCAL_CPPFLAGS := -std=c++11 -pthread -fexceptions -fno-rtti -g -O0
+
+LOCAL_C_INCLUDES += \
+	../src/sdk2/agorasdk/api \
+	../src/sdk2/agorasdk \
+	../src/mynetlib  \
+	../src/  \
+	$(MEDIASDK_INCLUDE_PATH) \
+	../libuv/include \
+
+LOCAL_SRC_FILES := \
+	agora_sdk2_jni.cpp \
+	../../src/sdk2/agorasdk/agora_api.cpp \
+	../../src/sdk2/agorasdk/cmp.c \
+	../../src/sdk2/agorasdk/prot/protocol.cpp \
+	../../src/sdk2/agorasdk/utils/CityHash.cpp \
+	../../src/sdk2/agorasdk/utils/log.cpp \
+	../../src/mynetlib/network.cpp \
+	../../src/mynetlib/pystring.cpp \
+	../../src/mynetlib/myutil.cpp \
+	../../src/json/jsoncpp.cpp \
+	../../src/libs/miniz.cpp \
+
+
+LOCAL_LDLIBS += -llog
+LOCAL_LDFLAGS += -ldl
+LOCAL_STATIC_LIBRARIES := libuv
+LOCAL_SHARED_LIBRARIES := libaudiojni
+LOCAL_MODULE := libagorasdk2
+include $(BUILD_SHARED_LIBRARY)
+

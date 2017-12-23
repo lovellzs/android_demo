@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_myapp1" default="compile.module.myapp1">
+  <dirname property="module.myapp1.basedir" file="${ant.file.module_myapp1}"/>
+  
+  <property name="module.jdk.home.myapp1" value="${jdk.home.android_api_15_platform}"/>
+  <property name="module.jdk.bin.myapp1" value="${jdk.bin.android_api_15_platform}"/>
+  <property name="module.jdk.classpath.myapp1" value="jdk.classpath.android_api_15_platform"/>
+  
+  <property name="compiler.args.myapp1" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="myapp1.output.dir" value="${module.myapp1.basedir}/out/production/myapp1"/>
+  <property name="myapp1.testoutput.dir" value="${module.myapp1.basedir}/out/test/myapp1"/>
+  
+  <path id="myapp1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="myapp1.module.production.classpath">
+    <path refid="${module.jdk.classpath.myapp1}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  <path id="myapp1.runtime.production.module.classpath">
+    <pathelement location="${myapp1.output.dir}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  <path id="myapp1.module.classpath">
+    <path refid="${module.jdk.classpath.myapp1}"/>
+    <pathelement location="${myapp1.output.dir}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  <path id="myapp1.runtime.module.classpath">
+    <pathelement location="${myapp1.testoutput.dir}"/>
+    <pathelement location="${myapp1.output.dir}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.myapp1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.myapp1">
+    <patternset refid="excluded.from.module.myapp1"/>
+  </patternset>
+  
+  <path id="myapp1.module.sourcepath">
+    <dirset dir="${module.myapp1.basedir}">
+      <include name="src"/>
+      <include name="gen"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.myapp1" depends="compile.module.myapp1.production,compile.module.myapp1.tests" description="Compile module myapp1"/>
+  
+  <target name="compile.module.myapp1.production" depends="register.custom.compilers" description="Compile module myapp1; production classes">
+    <mkdir dir="${myapp1.output.dir}"/>
+    <javac2 destdir="${myapp1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.myapp1}/javac">
+      <compilerarg line="${compiler.args.myapp1}"/>
+      <bootclasspath refid="myapp1.module.bootclasspath"/>
+      <classpath refid="myapp1.module.production.classpath"/>
+      <src refid="myapp1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.myapp1"/>
+    </javac2>
+    
+    <copy todir="${myapp1.output.dir}">
+      <fileset dir="${module.myapp1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.myapp1.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.myapp1.tests" depends="register.custom.compilers,compile.module.myapp1.production" description="compile module myapp1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.myapp1" description="cleanup module">
+    <delete dir="${myapp1.output.dir}"/>
+    <delete dir="${myapp1.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="myapp1" default="all">
+  
+  
+  <property file="myapp1.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.orig/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.tox/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.ane"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.android_api_15_platform" value="${jdk.home.android_api_15_platform}/../../../../System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin"/>
+  <path id="jdk.classpath.android_api_15_platform">
+    <fileset dir="${jdk.home.android_api_15_platform}">
+      <include name="platforms/android-15/android.jar"/>
+      <include name="platforms/android-15/data/res"/>
+      <include name="tools/support/annotations.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.android_api_15_platform}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.android_api_15_platform}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.android_api_15_platform"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.agorasdk.classpath">
+    <pathelement location="${basedir}/libs/AgoraSDK.jar"/>
+  </path>
+  
+  <path id="library.agoravoice-sdk.classpath">
+    <pathelement location="${basedir}/libs/agoravoice-sdk.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module myapp1 -->
+  
+  <dirname property="module.myapp1.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.myapp1" value="${jdk.home.android_api_15_platform}"/>
+  <property name="module.jdk.bin.myapp1" value="${jdk.bin.android_api_15_platform}"/>
+  <property name="module.jdk.classpath.myapp1" value="jdk.classpath.android_api_15_platform"/>
+  
+  <property name="compiler.args.myapp1" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="myapp1.output.dir" value="${module.myapp1.basedir}/out/production/myapp1"/>
+  <property name="myapp1.testoutput.dir" value="${module.myapp1.basedir}/out/test/myapp1"/>
+  
+  <path id="myapp1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="myapp1.module.production.classpath">
+    <path refid="${module.jdk.classpath.myapp1}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  <path id="myapp1.runtime.production.module.classpath">
+    <pathelement location="${myapp1.output.dir}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  <path id="myapp1.module.classpath">
+    <path refid="${module.jdk.classpath.myapp1}"/>
+    <pathelement location="${myapp1.output.dir}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  <path id="myapp1.runtime.module.classpath">
+    <pathelement location="${myapp1.testoutput.dir}"/>
+    <pathelement location="${myapp1.output.dir}"/>
+    <path refid="library.agoravoice-sdk.classpath"/>
+    <path refid="library.agorasdk.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.myapp1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.myapp1">
+    <patternset refid="excluded.from.module.myapp1"/>
+  </patternset>
+  
+  <path id="myapp1.module.sourcepath">
+    <dirset dir="${module.myapp1.basedir}">
+      <include name="src"/>
+      <include name="gen"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.myapp1" depends="compile.module.myapp1.production,compile.module.myapp1.tests" description="Compile module myapp1"/>
+  
+  <target name="compile.module.myapp1.production" depends="register.custom.compilers" description="Compile module myapp1; production classes">
+    <mkdir dir="${myapp1.output.dir}"/>
+    <javac2 destdir="${myapp1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.myapp1}/javac">
+      <compilerarg line="${compiler.args.myapp1}"/>
+      <bootclasspath refid="myapp1.module.bootclasspath"/>
+      <classpath refid="myapp1.module.production.classpath"/>
+      <src refid="myapp1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.myapp1"/>
+    </javac2>
+    
+    <copy todir="${myapp1.output.dir}">
+      <fileset dir="${module.myapp1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.myapp1.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.myapp1.tests" depends="register.custom.compilers,compile.module.myapp1.production" description="compile module myapp1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.myapp1" description="cleanup module">
+    <delete dir="${myapp1.output.dir}"/>
+    <delete dir="${myapp1.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.myapp1" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.myapp1" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.myapp1" value="${basedir}/out/artifacts/myapp1"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.myapp1.apk" value="${artifacts.temp.dir}/myapp1.apk"/>
+  </target>
+  
+  <target name="artifact.myapp1" depends="init.artifacts, compile.module.myapp1" description="Build &#39;myapp1&#39; artifact">
+    <property name="artifact.temp.output.myapp1" value="${artifacts.temp.dir}/myapp1"/>
+    <mkdir dir="${artifact.temp.output.myapp1}"/>
+    <zip destfile="${temp.jar.path.myapp1.apk}">
+      <zipfileset src="/Users/aa/agora_sdk/AgoraSDK2/prj_android/myapp1/out/production/myapp1/myapp1.afp.apk!/"/>
+    </zip>
+    <copy file="${temp.jar.path.myapp1.apk}" tofile="${artifact.temp.output.myapp1}/myapp1.apk"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.myapp1" description="Build all artifacts">
+    <mkdir dir="${artifact.output.myapp1}"/>
+    <copy todir="${artifact.output.myapp1}">
+      <fileset dir="${artifact.temp.output.myapp1}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

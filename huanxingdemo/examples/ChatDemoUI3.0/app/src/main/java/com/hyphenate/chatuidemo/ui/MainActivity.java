@@ -323,7 +323,7 @@ public class MainActivity extends BaseActivity {
 				}
 				//end of red packet code
 			}
-	         };
+	    };
         broadcastManager.registerReceiver(broadcastReceiver, intentFilter);
     }
 	
