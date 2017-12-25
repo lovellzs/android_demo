@@ -65,13 +65,10 @@ public class VoiceChatViewActivity extends AppCompatActivity {
 
     public boolean checkSelfPermission(String permission, int requestCode) {
         Log.i(LOG_TAG, "checkSelfPermission " + permission + " " + requestCode);
-        if (ContextCompat.checkSelfPermission(this,
-                permission)
+        if (ContextCompat.checkSelfPermission(this, permission)
                 != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this,
-                    new String[]{permission},
-                    requestCode);
+            ActivityCompat.requestPermissions(this,new String[]{permission}, requestCode);
             return false;
         }
         return true;
@@ -160,7 +157,8 @@ public class VoiceChatViewActivity extends AppCompatActivity {
 
     // Tutorial Step 2
     private void joinChannel() {
-        mRtcEngine.joinChannel(null, "voiceDemoChannel1", "Extra Optional Data", 0); // if you do not specify the uid, we will generate the uid for you
+        mRtcEngine.joinChannel(null, "voiceDemoChannel1", "Extra Optional Data", 0);
+        // if you do not specify the uid, we will generate the uid for you
     }
 
     // Tutorial Step 3
