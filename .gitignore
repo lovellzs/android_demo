@@ -9,6 +9,7 @@ captures
 .externalNativeBuild
 
 .idea
+local.properties
 
 bin
 gen

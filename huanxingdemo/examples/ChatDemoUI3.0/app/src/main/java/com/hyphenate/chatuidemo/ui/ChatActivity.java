@@ -48,7 +48,6 @@ public class ChatActivity extends BaseActivity{
             finish();
             startActivity(intent);
         }
-
     }
     
     @Override

@@ -463,7 +463,7 @@
         <!--easemob-demo#chatdemoui-->
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="1109171220115678#niwoyuewan" />
+            android:value="easemob-demo#chatdemoui" />
         <!-- 声明sdk所需的service -->
         <service
             android:name="com.hyphenate.chat.EMChatService"

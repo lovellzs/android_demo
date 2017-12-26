@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -272,7 +273,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         // you can change this number
 
         if (!isRoaming) {
-            final List<EMMessage> msgs = conversation.getAllMessages();
+            final List<EMMessage> msgs = conversation.getAllMessages();//从当前内存中获取，内存没有就从本地数据库获取
             int msgCount = msgs != null ? msgs.size() : 0;
             if (msgCount < conversation.getAllMsgCount() && msgCount < pagesize) {
                 String msgId = null;
@@ -380,6 +381,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         });
     }
 
+    //加载更多数据到当前会话内存
     private void loadMoreLocalMessage() {
         if (listView.getFirstVisiblePosition() == 0 && !isloading && haveMoreData) {
             List<EMMessage> messages;
@@ -544,6 +546,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                         } else {
                             titleBar.setTitle(toChatUsername);
                         }
+
                         onConversationInit();
                         onMessageListInit();
                     }
@@ -683,7 +686,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     }
     
 
-    //send message
+    //send message 发消息
     protected void sendTextMessage(String content) {
         if(EaseAtMessageHelper.get().containsAtUsername(content)){
             sendAtMessage(content);
@@ -805,7 +808,6 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
             }
             sendImageMessage(file.getAbsolutePath());
         }
-
     }
     
     /**
@@ -887,7 +889,6 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     protected void emptyHistory() {
         String msg = getResources().getString(R.string.Whether_to_empty_all_chats);
         new EaseAlertDialog(getActivity(),null, msg, null,new AlertDialogUser() {
-            
             @Override
             public void onResult(boolean confirmed, Bundle bundle) {
                 if(confirmed){
