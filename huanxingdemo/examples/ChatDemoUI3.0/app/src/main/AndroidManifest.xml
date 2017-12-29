@@ -459,11 +459,12 @@
 
         <!-- 设置环信应用的appkey -->
         <!--1164170821115760#tcliaobo-->
+
         <!--1109171220115678#niwoyuewan-->
         <!--easemob-demo#chatdemoui-->
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="easemob-demo#chatdemoui" />
+            android:value="1109171220115678#niwoyuewan" />
         <!-- 声明sdk所需的service -->
         <service
             android:name="com.hyphenate.chat.EMChatService"

@@ -53,7 +53,7 @@ public class EaseAvatarOptions {
         return avatarBorderWidth;
     }
 
-    /**
+     /**
      * 设置头像控件边框宽度
      *
      * @param width
