@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <application
@@ -15,6 +15,11 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.testanimate.AnimateActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.testanimate.GridAnimateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name" >
         </activity>
         <activity android:name="com.sz.testscrooll.TestScrollActivity" >

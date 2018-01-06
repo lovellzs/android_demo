@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AsDemo.iml" filepath="$PROJECT_DIR$/AsDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/pullrefreshlibrary/pullrefreshlibrary.iml" filepath="$PROJECT_DIR$/pullrefreshlibrary/pullrefreshlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/testapp/testapp.iml" filepath="$PROJECT_DIR$/testapp/testapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testviewpagerindicator/testviewpagerindicator.iml" filepath="$PROJECT_DIR$/testviewpagerindicator/testviewpagerindicator.iml" />
     </modules>
   </component>
 </project>

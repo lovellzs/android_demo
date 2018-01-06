@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.example.testanimate.AnimateActivity;
+import com.example.testanimate.GridAnimateActivity;
 import com.sz.main.test.R;
 import com.sz.testgesture.TestGestureActivity;
 import com.sz.testlayout.TestFrameBgActivity;
@@ -22,6 +23,7 @@ public class IndexActivity extends Activity implements OnClickListener{
 	private Button btn_test_framelayout_bg;
 	private Button btn_test_newgallery;
 	private Button btn_test_testripple;
+	private Button btn_test_giftanimate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class IndexActivity extends Activity implements OnClickListener{
 		
 		btn_test_testripple = (Button)findViewById(R.id.btn_test_testripple); 
 		btn_test_testripple.setOnClickListener(this);
+		btn_test_giftanimate = (Button)findViewById(R.id.btn_test_giftanimate); 
+		btn_test_giftanimate.setOnClickListener(this);
 	}
 
 	@Override
@@ -65,6 +69,8 @@ public class IndexActivity extends Activity implements OnClickListener{
 			toActivity( TestNewGalleryActivity.class );
 		}else if( id == R.id.btn_test_testripple){
 			toActivity( TestRippleActivity.class );
+		}else if( id == R.id.btn_test_giftanimate){
+			toActivity( GridAnimateActivity.class );
 		}
 	}
 	
