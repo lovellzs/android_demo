@@ -104,7 +104,7 @@ public class DbOpenHelper extends SQLiteOpenHelper{
 	public void closeDB() {
 	    if (instance != null) {
 	        try {
-	            SQLiteDatabase db = instance.getWritableDatabase();
+				SQLiteDatabase db = instance.getWritableDatabase();
 	            db.close();
 	        } catch (Exception e) {
 	            e.printStackTrace();
@@ -112,5 +112,4 @@ public class DbOpenHelper extends SQLiteOpenHelper{
 	        instance = null;
 	    }
 	}
-	
 }

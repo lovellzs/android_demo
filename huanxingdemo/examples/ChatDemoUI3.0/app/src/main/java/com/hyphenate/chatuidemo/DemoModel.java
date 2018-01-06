@@ -22,13 +22,15 @@ public class DemoModel {
         context = ctx;
         PreferenceManager.init(context);
     }
-    
+
+    //保存联系人
     public boolean saveContactList(List<EaseUser> contactList) {
         UserDao dao = new UserDao(context);
         dao.saveContactList(contactList);
         return true;
     }
 
+    //获取联系人列表
     public Map<String, EaseUser> getContactList() {
         UserDao dao = new UserDao(context);
         return dao.getContactList();

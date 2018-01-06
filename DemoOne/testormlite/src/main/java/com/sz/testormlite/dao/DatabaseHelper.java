@@ -80,27 +80,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         return userDao;
     }
 
-//    private static DatabaseHelper instance;
-//
-//    /**
-//     * 单例获取该Helper
-//     *
-//     * @param context
-//     * @return
-//     */
-//    public static synchronized DatabaseHelper getHelper(Context context)
-//    {
-//        if (instance == null)
-//        {
-//            synchronized (DatabaseHelper.class)
-//            {
-//                if (instance == null)
-//                    instance = new DatabaseHelper(context);
-//            }
-//        }
-//        return instance;
-//    }
-
     public void init(){
         this.getWritableDatabase().close();
     }
