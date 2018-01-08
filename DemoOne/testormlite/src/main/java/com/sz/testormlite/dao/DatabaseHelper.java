@@ -76,7 +76,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
                 e.printStackTrace();
             }
         }
-        
         return userDao;
     }
 

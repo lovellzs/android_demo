@@ -81,6 +81,7 @@ public class EaseSmileUtils {
 		for (EaseEmojicon emojicon : emojicons) {
 			addPattern(emojicon.getEmojiText(), emojicon.getIcon());
 		}
+
 	    EaseEmojiconInfoProvider emojiconInfoProvider = EaseUI.getInstance().getEmojiconInfoProvider();
 	    if(emojiconInfoProvider != null && emojiconInfoProvider.getTextEmojiconMapping() != null){
 	        for(Entry<String, Object> entry : emojiconInfoProvider.getTextEmojiconMapping().entrySet()){
@@ -96,7 +97,7 @@ public class EaseSmileUtils {
 	 * @param icon -- resource id or local path
 	 */
 	public static void addPattern(String emojiText, Object icon){
-	    emoticons.put(Pattern.compile(Pattern.quote(emojiText)), icon);
+	    emoticons.put(Pattern.compile(Pattern.quote(emojiText) ), icon);
 	}
 	
 
@@ -130,7 +131,7 @@ public class EaseSmileUtils {
 	                        return false;
 	                    }
 	                    spannable.setSpan(new ImageSpan(context, Uri.fromFile(file)),
-	                            matcher.start(), matcher.end(),
+                                matcher.start(), matcher.end(),
 	                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 	                }else{
 	                    spannable.setSpan(new ImageSpan(context, (Integer)value),

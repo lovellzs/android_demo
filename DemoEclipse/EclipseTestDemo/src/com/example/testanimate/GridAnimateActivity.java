@@ -37,7 +37,7 @@ public class GridAnimateActivity extends Activity {
 
 	DisplayMetrics dm = null;
 	
-	private Position[] pppp  = new Position[10];
+	private GiftPositionB[] pppp  = new GiftPositionB[10];
 	private GridView grid_view;
 	
 	private ArrayList<Integer> ic_list = new ArrayList<Integer>();
@@ -64,7 +64,7 @@ public class GridAnimateActivity extends Activity {
 				iv.getLocationOnScreen(ll);  
 				System.out.println( "ll[0] " + ll[0] + "=== ll[1] " +  ll[1]);
 				if( pppp[position] == null ){
-					pppp[position] = new Position();
+					pppp[position] = new GiftPositionB();
 					pppp[position].index = position;
 					pppp[position].px = ll[0];
 					pppp[position].py = ll[1];
@@ -102,7 +102,7 @@ public class GridAnimateActivity extends Activity {
 					end = "8";
 				}
 				System.out.println("start" +  start + "end" + end);
-				animate1( Integer.parseInt(start) , 9 , Integer.parseInt(end) );
+				GiftAnimation.animate1(gift_img, Integer.parseInt(start) , Integer.parseInt(end) ,pppp);
 			}
 		});
 	}
@@ -119,7 +119,7 @@ public class GridAnimateActivity extends Activity {
 		System.out.println( "ll[0] " + ll[0] + "=== ll[1] " +  ll[1]);
 		
 		//麦主位置
-		pppp[8] = new Position();
+		pppp[8] = new GiftPositionB();
 		pppp[8].index = 8;
 		pppp[8].px = ll[0];
 		pppp[8].py = ll[1];
@@ -127,102 +127,11 @@ public class GridAnimateActivity extends Activity {
 		//中点位置
 		gift_img.getLocationOnScreen(ll);
 		System.out.println( "ll[0] " + ll[0] + "=== ll[1] " +  ll[1]);
-		pppp[9] = new Position();
+		pppp[9] = new GiftPositionB();
 		pppp[9].index = 9;
 		pppp[9].px = ll[0] ;
 		pppp[9].py = ll[1] ;
 	}
-	
-	private  void initXY( int from1 ,boolean show){
-		gift_img.setVisibility(8);
-		ViewHelper.setScaleX(gift_img, 0.3f);
-		ViewHelper.setScaleY(gift_img, 0.3f);
-		ViewHelper.setX(gift_img, pppp[from1].px);
-		ViewHelper.setY(gift_img, pppp[from1].py - 50);
-		if( show ){
-			gift_img.setVisibility(View.VISIBLE);
-		}
-//		gift_img.fillAfter
-	}
-	
-	private void animate1(final int from1 ,final int toCenter ,final int to1){
-		initXY(from1,true);
-		System.out.println(  "pppp[toCenter].px" + (pppp[toCenter].px)  );
-		System.out.println(  "pppp[from1].px" + (pppp[from1].px)  );
-		System.out.println(  "pppp[toCenter].px - pppp[from1].px" + (pppp[toCenter].px - pppp[from1].px)  );
-		
-		System.out.println(  "pppp[toCenter].py" + (pppp[toCenter].py)  );
-		System.out.println(  "pppp[from1].py" + (pppp[from1].py)  );
-		System.out.println(  "pppp[toCenter].py - pppp[from1].py" + (pppp[toCenter].py - pppp[from1].py)  );
-		com.nineoldandroids.view.ViewPropertyAnimator.animate(gift_img)
-		.translationX(  0 )
-		.translationY(  0 )
-//		.translationXBy(pppp[from1].px - pppp[toCenter].px)
-//		.translationYBy(pppp[from1].py - pppp[toCenter].py)
-		.setInterpolator(new AccelerateInterpolator())
-		.setDuration(500)
-		.rotation(0)
-		.scaleX(1)
-		.scaleY(1)
-		.setListener(new AnimatorListener() {
-			@Override
-			public void onAnimationStart(Animator arg0) {
-				// TODO Auto-generated method stub
-			}
-			
-			@Override
-			public void onAnimationRepeat(Animator arg0) {
-				// TODO Auto-generated method stub
-			}
-			
-			@Override
-			public void onAnimationEnd(Animator arg0) {
-				// TODO Auto-generated method stub
-				animate2( from1,toCenter,to1  );
-			}
-			
-			@Override
-			public void onAnimationCancel(Animator arg0) {
-				// TODO Auto-generated method stub
-			}
-		});
-	}
-	
-	private void animate2( int from1 ,int toCenter ,final int to1 ){
-		com.nineoldandroids.view.ViewPropertyAnimator.animate(gift_img)
-		.translationX( pppp[to1].px -  pppp[toCenter].px )
-		.translationY( pppp[to1].py - pppp[toCenter].py )
-//		.translationXBy(pppp[from1].px - pppp[toCenter].px)
-//		.translationYBy(pppp[from1].py - pppp[toCenter].py)
-		.setInterpolator(new AccelerateInterpolator())
-		.setDuration(500)
-		.rotation(0)
-		.scaleX(0.3f)
-		.scaleY(0.3f)
-		.setListener(new AnimatorListener() {
-			@Override
-			public void onAnimationStart(Animator arg0) {
-				// TODO Auto-generated method stub
-			}
-			
-			@Override
-			public void onAnimationRepeat(Animator arg0) {
-				// TODO Auto-generated method stub
-			}
-			
-			@Override
-			public void onAnimationEnd(Animator arg0) {
-				// TODO Auto-generated method stub
-				initXY(to1 ,true);
-			}
-			
-			@Override
-			public void onAnimationCancel(Animator arg0) {
-				// TODO Auto-generated method stub
-			}
-		});
-	}
-
 	
 	private class MaiWeiAdapter  extends BaseAdapter{
 		

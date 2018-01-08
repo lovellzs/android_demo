@@ -26,7 +26,7 @@ public class AnimateActivity extends Activity {
 
 	DisplayMetrics dm = null;
 	
-	private Position[] pppp  = new Position[10];
+	private GiftPositionB[] pppp  = new GiftPositionB[10];
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,17 +76,17 @@ public class AnimateActivity extends Activity {
 	}
 	
 	private void initPPPPP() {
-		pppp[0] = new Position();
+		pppp[0] = new GiftPositionB();
 		pppp[0].index = 0;
 		pppp[0].px = 0 + 300;
 		pppp[0].py = dm.heightPixels/2 -300;
 		
-		pppp[1] = new Position();
+		pppp[1] = new GiftPositionB();
 		pppp[1].index = 0;
 		pppp[1].px = 0 + 100;
 		pppp[1].py = dm.heightPixels -400;
 		
-		pppp[9] = new Position();
+		pppp[9] = new GiftPositionB();
 		pppp[9].index = 9;
 		pppp[9].px = dm.widthPixels/2 - 150;
 		pppp[9].py = dm.heightPixels/2 + 250;
@@ -171,5 +171,4 @@ public class AnimateActivity extends Activity {
 			}
 		});
 	}
-	
 }

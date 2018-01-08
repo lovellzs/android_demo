@@ -60,8 +60,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/chat_nick_margin_left"
             android:textSize="@dimen/chat_nick_text_size"
+            android:text="adadada"
             android:layout_toRightOf="@id/iv_userhead"
-            android:visibility="gone" />
+            android:visibility="visible" />
     </RelativeLayout>
 
 </LinearLayout>

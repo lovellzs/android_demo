@@ -58,6 +58,8 @@ public class DaoManager {
         if (databaseHelper != null) {
             databaseHelper.close();
             OpenHelperManager.releaseHelper();
+
+            userDao = null;
             databaseHelper = null;
         }
     }
