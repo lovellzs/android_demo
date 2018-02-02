@@ -145,6 +145,7 @@ public class EaseMessageAdapter extends BaseAdapter{
      * refresh and seek to the position
      */
     public void refreshSeekTo(int position) {
+
 	    handler.sendMessage(handler.obtainMessage(HANDLER_MESSAGE_REFRESH_LIST));
     }
 
